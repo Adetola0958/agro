@@ -1,0 +1,45 @@
+include includes/header.pug 
+block content 
+  link(rel='stylesheet' , href='/stylesheets/style.css')
+  body
+    div.container.pt-3 
+      h4.text-center Farmers
+      if noFarmer
+        p #{noFarmer}
+      if pages
+        - let pagePoint = currentPage + 1
+        - let pageUrl = "/farmer?page=" + pagePoint
+        p.mb-3 Result Page #{pagePoint - 1} of #{pages}
+        if currentPage > 1
+          - let backPoint = currentPage - 1
+          - let backUrl = "/farmer?page=" + backPoint
+          a(class="btn btn-danger" href=backurl) Back
+        if currentPage != pages
+          a(class="btn btn-primary" href=pageUrl) Next
+        div(class="col-md table-responsive" style="overflow-x:auto;")
+          table.table.table-bordered
+            thead
+            tr
+              th S/N
+              th Name
+              th Email
+              th Action
+            tbody
+            if farmers
+              - let i = skipIt
+              each farmer, index in farmers
+                - let name = farmer.firstName
+                - let email = farmer.email
+                - let viewUrl = "/admin/farmer/" + farmer._id
+                - i++
+                tr
+                td #{i}
+                td #{name}
+                td #{email}
+                td #[a(href=viewUrl class="btn btn-success") View Farmer]
+
+      div.text-center.justify-content-center.mt-5 
+        p
+         a(href="/admin/dashboard" class="btn btn-success") Back to home page
+
+    include includes/footer.pug

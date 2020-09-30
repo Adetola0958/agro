@@ -1,0 +1,17 @@
+include includes/header.pug 
+block content
+  link(rel='stylesheet' , href='/stylesheets/style.css')
+  body
+    div.container.pt-3 
+      h3.welcome-text Welcome Administrator
+
+      p
+        a(href="/admin/farmer" class="btn btn-success") Farmers
+      p
+        a(href="/admin/buyer" class="btn btn-success") Buyers
+      p
+        a(href="/admin/produce" class="btn btn-success") Produce
+      p
+        a(href="/admin/logout" class="btn btn-success") Logout 
+  
+  include includes/footer.pug   

@@ -1,0 +1,33 @@
+include includes/header.pug
+block content
+  link(rel='stylesheet' , href='/stylesheets/style.css')
+  body
+    header(id="header")
+      div(class="container")
+        div(class='logo float-left')
+          a(href="/" class="navbar-brand") AgroHub
+        nav(class="menu-custom float-right d-none d-lg-block")
+          ul
+            li
+              a(href="/") Home
+            li
+              a(href="#") About
+            li
+              a(href="#") Contact
+            li(class="drop-down") #[a(href="#") Login]
+              ul
+                li
+                  a(href="/farmer") Farmers
+                li
+                  a(href="/buyer") Buyers
+
+    section(id="intro" class="clearfix")
+      div(class="intro-container")
+        div(class="intro-box")
+          h2 Tempora Amet Quod
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora amet quod porro libero quasi laudantium nam rerum vitae nesciunt, similique alias reiciendis mollitia eos adipisci perspiciatis, exercitationem delectus consectetur nulla!
+        
+  
+  include includes/footer.pug
+
+

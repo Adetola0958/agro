@@ -1,0 +1,34 @@
+include includes/header.pug 
+block content 
+  link(rel='stylesheet' , href='/stylesheets/main.css')
+  body(class="fixed-navbar")
+    div(class="page-wrapper")
+      include includes/farmer-navbar.pug
+      include includes/farmer-sidebar.pug
+      div(class="main-dashboard")
+        div(class="row" id="body-row")
+          div(class="col p-0 w-25")
+            div(class="col mt-2 p-3")
+              div(class="profile")
+                div.container.pt-3 
+                  div(class="content-wrapper")
+                    div(class="page-content")
+                        if farmer
+                          h2.welcome-text Welcome #{farmer.firstName}
+                        form(method="POST")
+                            label(for="firstname") First Name:
+                            input(type="text" value= farmerDB.firstName class="profile-form mb-4 mr-3")
+                            label(for="lastname") Last Name:
+                            input(type="text" value= farmerDB.lastName class="profile-form mb-4 mr-3")
+                            label(for="middlename") Middle Name:
+                            input(type="text" value=farmerDB.middleName class="profile-form mb-4 mr-3")
+                            label(for="email") Email:
+                            input(type="text" value=farmerDB.email class="profile-form mb-4 mr-3")
+                            label(for="mobile") Mobile Number:
+                            input(type="text" value="0"+farmerDB.mobileNumber class="profile-form mb-4 mr-3")
+                            label(for="mobile") Gender:
+                            input(type="text" value=farmerDB.gender class="profile-form mb-4 mr-3")
+      
+
+  include includes/footer.pug
+  script(src="/javascripts/app.js" type="module")

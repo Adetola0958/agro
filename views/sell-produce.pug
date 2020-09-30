@@ -1,0 +1,80 @@
+include includes/header.pug 
+block content 
+  link(rel='stylesheet' , href='/stylesheets/main.css')
+  body(class="fixed-navbar")
+    div(class="page-wrapper")
+      include includes/farmer-navbar.pug
+      include includes/farmer-sidebar.pug
+      div(class="main-dashboard")
+        div(class="row" id="body-row")
+          div(class="col p-0 w-25")
+            div(class="col mt-2 p-3")
+              div(class="profile")
+                div.container
+                  div(class="content-wrapper")
+                    div(class="page-content") 
+                      h4.text-center Farm Produce
+                      if noProduce
+                        p #{noProduce}
+                      if pages
+                        - let pagePoint = currentPage + 1
+                        - let pageUrl = "/dashboard/produce?page=" + pagePoint
+                        p.mb-3 Result Page #{pagePoint - 1} of #{pages}
+                        if currentPage > 1
+                          - let backPoint = currentPage - 1
+                          - let backUrl = "/dashboard/produce?page=" + backPoint
+                          a(class="btn btn-danger" href=backurl) Back
+                        if currentPage != pages
+                          a(class="btn btn-primary" href=pageUrl) Next
+                        div(class="col-md table-responsive" style="overflow-x:auto;")
+                          table.table.table-bordered
+                            thead
+                            tr
+                              th S/N
+                              th Name of Produce
+                              th Quantity
+                              th Cost
+                              th Action
+                            tbody
+                            if produces
+                              - let i = skipIt
+                              each produce, index in produces
+                                - let name = produce.produceName
+                                - let quantity = produce.quantity
+                                - let cost = produce.cost
+                                - let updateUrl = "/farmer/dashboard/produce/" + produce._id
+                                - i++
+                                tr
+                                td #{i}
+                                td #{name}
+                                td #{quantity}
+                                td #{cost}
+                                td #[a(href=updateUrl class="btn btn-success") Update]
+                      div(class="text-center")
+                        a(href="#" class="btn btn-success" data-toggle="modal" data-target="#upload") Upload A Produce
+
+                      div(id="upload" class="modal fade")
+                        div(class="modal-dialog" role="document")
+                          div(class="modal-content")
+                            div(class="modal-header")
+                              h4(class="modal-title") Upload A Produce
+                              button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                                span(aria-hidden="true") &times;
+                            div(class="modal-body")
+                              form(method="POST")
+                                div(class="row")
+                                  div(class="col-md-12")
+                                    input(type="text" class="form-control mb-2" name="produceName" placeholder="Enter name of produce" id="name" required)
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="quantity" placeholder="Quantity of produce" id="quantity" required)
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="cost" placeholder="Cost of produce" id="cost" required)
+                                div(class="text-center justify-content-center mt-3")
+                                  button(type="submit" id="submit" class="btn btn-success") Upload
+                      div.text-center.justify-content-center.mt-5 
+                        p
+                        a(href="/farmer/dashboard" class="btn btn-success") Back to home page
+
+
+    include includes/footer.pug   
+    script(src="/javascripts/app.js" type="module")        

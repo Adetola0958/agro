@@ -1,0 +1,21 @@
+block content
+
+  nav(class="page-sidebar" id="sidebar")
+    div(id="sidebar-collapse")
+      div(class="admin-block d-flex")
+        if farmer
+          div
+            img(src="", alt="")
+          div(class="admin-info")
+            div(class="font-strong") #{farmer.firstName} #{farmer.lastName}
+      
+      ul(class="side-menu metismenu")
+        li(class="active")
+          a(href="/farmer/dashboard")
+            i(class="sidebar-item-icon fa fa-th-large")
+            span(class="nav-label") Dashboard
+        li(class="heading") FEATURES
+        li
+          a(href="/farmer/dashboard/produce")
+            i(class="sidebar-item-icon fa fa-buysellads")
+            span(class="nav-label") Sell Produce

@@ -1,0 +1,48 @@
+include includes/header.pug 
+block content 
+  link(rel='stylesheet' , href='/stylesheets/style.css')
+  body
+    div.container.pt-3 
+      h4.text-center Farm Produce
+      if noProduce
+        p #{noProduce}
+      if pages
+        - let pagePoint = currentPage + 1
+        - let pageUrl = "/produce?page=" + pagePoint
+        p.mb-3 Result Page #{pagePoint - 1} of #{pages}
+        if currentPage > 1
+          - let backPoint = currentPage - 1
+          - let backUrl = "/produce?page=" + backPoint
+          a(class="btn btn-danger" href=backurl) Back
+        if currentPage != pages
+          a(class="btn btn-primary" href=pageUrl) Next
+        div(class="col-md table-responsive" style="overflow-x:auto;")
+          table.table.table-bordered
+            thead
+            tr
+              th S/N
+              th Name of Produce
+              th Quantity
+              th Cost
+              th Action
+            tbody
+            if produces
+              - let i = skipIt
+              each produce, index in produces
+                - let name = produce.produceName
+                - let quantity = produce.quantity
+                - let cost = produce.cost
+                - let deleteUrl = "/admin/produce/" + produce._id
+                - i++
+                tr
+                td #{i}
+                td #{name}
+                td #{quantity}
+                td #{cost}
+                td #[a(href=deleteUrl class="btn btn-success") Remove]
+
+      div.text-center.justify-content-center.mt-5 
+        p
+         a(href="/admin/dashboard" class="btn btn-success") Back to home page
+
+    include includes/footer.pug

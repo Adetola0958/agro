@@ -1,0 +1,464 @@
+/*=======body===========*/
+.color-background{
+  background: #f0f0f0;
+}
+
+/*.......Header..........*/
+.navbar{
+  background: rgba(146, 43, 33, 0.9);
+}
+.navbar ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#header {
+  height: 70px;
+  transition: all 0.5s;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 997;
+}
+.navbar-brand{
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 400;
+  font-style: italic;
+  color: #ffffff;
+}
+.navbar-brand:hover{
+  color: #ffffff;
+}
+
+/*.....Navigation.......*/
+.menu-custom *{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu-custom > ul > li {
+  position: relative;
+  white-space: nowrap;
+  float: left;
+}
+.menu-custom a {
+  display: block;
+  position: relative;
+  color: #ffffff;
+  padding: 10px 15px;
+  transition: 0.3s;
+  font-size: .9rem;
+  font-weight: 600;
+  margin-left: 7px;
+  text-transform: uppercase;
+}
+.menu-custom a:hover,
+.menu-custom .active > a {
+  color: #f0f0f0;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.menu-custom .drop-down ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(100% - 30px);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  padding: 10px 0;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: ease all 0.3s;
+}
+.menu-custom .drop-down:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+.menu-custom .drop-down li {
+  min-width: 180px;
+  position: relative;
+}
+.menu-custom .drop-down ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.9);
+}
+.menu-custom .drop-down ul a:hover,
+.menu-custom .drop-down ul .active > a {
+  color: rgba(0 , 0 , 0 , 0.9);
+  font-weight: 600;
+}
+.menu-custom .drop-down > a:after {
+  content: "\f107";
+  font-family: FontAwesome;
+  padding-left: 10px;
+}
+
+/*.......Responsive Navigation..........*/
+.mobile-nav-toggle {
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 9998;
+	border: 0;
+	background: none;
+	font-size: 24px;
+	transition: all 0.4s;
+	outline: none !important;
+	line-height: 1;
+	cursor: pointer;
+	text-align: right;
+}
+.mobile-nav-toggle i {
+	margin: 20px 18px 0 0;
+	color: #ffffff;
+}
+.mobile-nav-active {
+	overflow: hidden;
+} 
+.mobile-nav-active .mobile-nav {
+	left: 0;
+} 
+.mobile-nav-active .mobile-nav-toggle i {
+	color: #fff;
+}
+.mobile-nav {
+	position: fixed;
+	top: 70px;
+	bottom: 0;
+	z-index: 9999;
+	overflow-y: auto;
+	left: -260px;
+	width: 260px;
+	padding-top: 18px;
+	background: rgb(146, 43, 33);
+  transition: all 0.5s;
+  height: 60vh;
+}
+.mobile-nav * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.mobile-nav a {
+	display: block;
+	position: relative;
+	color: #fff;
+	padding: 10px 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+.mobile-nav a:hover,
+.mobile-nav .active > a {
+  	color: #ffffff;
+  	text-decoration: underline;
+}
+.mobile-nav .drop-down > a:after {
+  content: "\f078";
+  font-family: FontAwesome;
+  padding-left: 10px;
+  position: absolute;
+  right: 15px;
+}
+.mobile-nav .active.drop-down > a:after {
+  content: "\f077";
+}
+.mobile-nav .drop-down > a {
+  padding-right: 35px;
+}
+.mobile-nav .drop-down ul {
+  display: none;
+  overflow: hidden;
+} 
+.mobile-nav .drop-down li {
+  padding-left: 20px;
+}
+
+/*....Intro Section.....*/
+#intro {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #f5f8fd url(/images/crops.jpg) center top no-repeat;
+    background-size: cover;
+}
+ #intro:before {
+    content: "";
+    background:rgba(6, 12, 34, 0.7);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+#intro .intro-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 90px;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 15px;
+}
+.intro-box{
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 30px;
+}
+#intro h2 {
+  color: #ffffff;
+  font-weight: 500;
+}
+#intro p {
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 1.15rem;
+    font-style: italic;
+    max-width: 1000px;
+}
+.error{
+  font-weight: 600;
+  font-style: italic;
+  color: #f00;
+}
+
+.btn-file input[type="file"]{
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  opacity : 0;
+  outline: none;
+  cursor: inherit;
+  display: block;
+}
+.btn-file{
+  position: relative;
+  overflow: hidden;
+  background: rgba(136, 40, 32, 0.5);
+  color: #ffffff;
+}
+.btn-file:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+.instruction-para{
+  font-size: .8rem;
+  margin: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.modal-body label{
+  font-size: .9rem;
+}
+.each-field{
+  border: 1px solid rgba(0 , 0 , 0 , 0.2);
+  padding: 8px 10px;
+}
+.each-field .question {
+  font-weight: 600;
+  word-spacing: 5px;
+}
+.each-field span{
+  margin-right: 15px;
+}
+
+/*==========BUTTONS==========*/
+.main-btn{
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: rgba(146, 43, 33, 0.9);
+  color: #fff;
+}
+.red-btn{
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #dc3545;
+  color: #fff;
+}
+.red-btn:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+.main-btn:hover{
+  color: #ffffff;
+  text-decoration: none;
+  background: rgb(146, 43, 33);
+}
+
+/*===========MAIN EXAM==============*/
+.exam-box{
+  background: #ffffff;
+  padding: 20px 50px;
+  border: 1px dashed rgba(0 , 0 , 0 , 0.4);
+}
+.time-box{
+  background: #000000;
+  color: #ffffff;
+  padding: 6px 20px;
+  font-weight: 600;
+}
+.question-top{
+  border-bottom: 1px solid rgba(0 , 0 , 0 , 0.2);
+}
+.question-para{
+  word-spacing: 4px;
+}
+.radio-box{
+  border: 1px solid #82a9d3;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+/*========STAFF DASHBOARD==========*/
+.exam-para {
+  border-top: 1px solid;
+  padding: 10px 0;
+  width: 30%;
+  text-align: center;
+}
+.exam-para:last-child{
+  border-bottom: 1px solid;
+}
+.exam-link {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #0a98c0;
+}
+.exam-link:hover{
+  color: #0eb8e7;
+  font-weight: 500;
+  text-decoration: none;
+}
+.conclusion-para{
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+#buyer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #f5f8fd url(/images/cropbuyer.jpg) center top no-repeat;
+  background-size: cover;
+}
+#buyer:before {
+  content: "";
+  background:rgba(6, 12, 34, 0.7);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#buyer .intro-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 90px;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+}
+#buyer h3 {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+#farmer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #f5f8fd url(/images/tomato.jpg) center top no-repeat;
+  background-size: cover;
+}
+#farmer:before {
+  content: "";
+  background:rgba(6, 12, 34, 0.7);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#farmer .intro-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 5px;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+}
+#farmer h3 {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}

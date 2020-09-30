@@ -1,0 +1,6 @@
+p
+        a(href="/farmer/logout" class="btn btn-success") Logout
+      p
+        a(href="#" class="btn btn-success") Update Account
+      p
+        a(href="/farmer/dashboard/delete" class="btn btn-success") Delete your account

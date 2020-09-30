@@ -1,0 +1,25 @@
+block content
+
+  nav(class="page-sidebar" id="sidebar")
+    div(id="sidebar-collapse")
+      div(class="admin-block d-flex")
+        if buyer
+          div
+            img(src="", alt="")
+          div(class="admin-info")
+            div(class="font-strong") #{buyer.firstName} #{buyer.lastName}
+      
+      ul(class="side-menu metismenu")
+        li(class="active")
+          a(href="/buyer/dashboard")
+            i(class="sidebar-item-icon fa fa-th-large")
+            span(class="nav-label") Dashboard
+        li(class="heading") FEATURES
+        li
+          a(href="/buyer/dashboard/produce")
+            i(class="sidebar-item-icon fa fa-buysellads")
+            span(class="nav-label") Buy Produce 
+        li
+          a(href="#")
+            i(class="sidebar-item-icon fa fa-cart-plus")
+            span(class="nav-label") Cart

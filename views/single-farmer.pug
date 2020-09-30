@@ -1,0 +1,22 @@
+include includes/header.pug 
+block content 
+  link(rel="stylesheet", href="")
+  body
+    div.container.pt-3 
+      h2.welcome-text Welcome Administrator
+      form(method="POST")
+          label(for="firstname") First Name:
+          input(type="text" value= farmerDB.firstName class="profile-form mb-4 mr-3")
+          label(for="lastname") Last Name:
+          input(type="text" value= farmerDB.lastName class="profile-form mb-4 mr-3")
+          label(for="middlename") Middle Name:
+          input(type="text" value=farmerDB.middleName class="profile-form mb-4 mr-3")
+          label(for="email") Email:
+          input(type="text" value=farmerDB.email class="profile-form mb-4 mr-3")
+          label(for="mobile") Mobile Number:
+          input(type="text" value="0"+farmerDB.mobileNumber class="profile-form mb-4 mr-3")
+          label(for="mobile") Gender:
+          input(type="text" value=farmerDB.gender class="profile-form mb-4 mr-3")
+      
+
+  include includes/footer.pug

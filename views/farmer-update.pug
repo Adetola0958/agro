@@ -1,0 +1,56 @@
+include includes/header.pug 
+block content 
+  link(rel='stylesheet' , href='/stylesheets/main.css')
+  body(class="fixed-navbar")
+    div(class="page-wrapper")
+      include includes/farmer-navbar2.pug
+      include includes/farmer-sidebar.pug
+      div(class="main-dashboard")
+        div(class="row" id="body-row")
+          div(class="col p-0 w-25")
+            div(class="col mt-2 p-3")
+              div(class="profile")
+                div.container
+                  div(class="content-wrapper")
+                    div(class="page-content")
+                      div(class="text-center")
+                        a(href="#" class="btn btn-success" data-toggle="modal" data-target="#update") Update your Details
+
+                      div(id="update" class="modal fade")
+                        div(class="modal-dialog" role="document")
+                          div(class="modal-content")
+                            div(class="modal-header")
+                              h4(class="modal-title") Update your Details
+                              button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                                span(aria-hidden="true") &times;
+                            div(class="modal-body")
+                              form(method="POST")
+                                div(class="row")
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="firstName" placeholder="First Name")
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="lastName" placeholder="Last Name")
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="middleName" placeholder="Middle Name")
+                                  div(class="col-md-6")
+                                    input(type="email" class="form-control mb-2" name="email" placeholder="Email")
+                                  div(class="col-md-6")
+                                    input(type="password" class="form-control mb-2" name="password" placeholder="Password")
+                                  div(class="col-md-6")
+                                    input(type="tel" class="form-control mb-2" name="mobileNumber" placeholder="Mobile Number")
+                                  div(class="col-md-6")
+                                    select(class="form-control mb-2" name="gender")
+                                        option(value="male") Male
+                                        option(value="female") Female
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="farmNumber" placeholder="Number")
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="streetName" placeholder="Address")
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="state" placeholder="State")
+                                div(class="text-center justify-content-center")
+                                  button(type="submit" class="mt-3 btn btn-primary") Update
+    
+    include includes/footer.pug 
+    script(src="/javascripts/app.js" type="module")
+    

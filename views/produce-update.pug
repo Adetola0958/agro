@@ -1,0 +1,40 @@
+include includes/header.pug 
+block content 
+  link(rel='stylesheet' , href='/stylesheets/main.css')
+  body(class="fixed-navbar")
+    div(class="page-wrapper")
+      include includes/farmer-navbar2.pug
+      include includes/farmer-sidebar.pug
+      div(class="main-dashboard")
+        div(class="row" id="body-row")
+          div(class="col p-0 w-25")
+            div(class="col mt-2 p-3")
+              div(class="profile")
+                div.container
+                  div(class="content-wrapper")
+                    div(class="page-content")
+                      div(class="text-center")
+                        a(href="#" class="btn btn-success" data-toggle="modal" data-target="#update") Update A Produce
+
+                      div(id="update" class="modal fade")
+                        div(class="modal-dialog" role="document")
+                          div(class="modal-content")
+                            div(class="modal-header")
+                              h4(class="modal-title") Update A Produce
+                              button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                                span(aria-hidden="true") &times;
+                            div(class="modal-body")
+                              form(method="POST")
+                                div(class="row")
+                                  div(class="col-md-12")
+                                    input(type="text" class="form-control mb-2" name="produceName" placeholder="Enter name of produce" id="name" required)
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="quantity" placeholder="Quantity of produce" id="quantity" required)
+                                  div(class="col-md-6")
+                                    input(type="text" class="form-control mb-2" name="cost" placeholder="Cost of produce" id="cost" required)
+                                div(class="text-center justify-content-center mt-3")
+                                  button(type="submit" id="submit" class="btn btn-success") Update
+    
+    include includes/footer.pug 
+    script(src="/javascripts/app.js" type="module")
+      
